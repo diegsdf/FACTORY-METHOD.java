@@ -1,0 +1,22 @@
+// PARTE 1 FACTORY METHOD//
+package pessoa;
+import java.util.Scanner;
+
+public class Pessoa {
+
+    
+    public static void main(String[] args) {
+       
+        FactoryPessoa factory = new FactoryPessoa();
+	Scanner teclado = new Scanner(System.in);
+        System.out.println("Digite nome aluno: ");
+        String nome = teclado.nextLine(); 		
+        System.out.println("Digite nota 1 ");        
+                float a1 = teclado.nextFloat();
+        System.out.println("Digite nota 2 ");
+                float b1 = teclado.nextFloat();
+       
+        Pessoa1 pessoa = factory.getPessoa(nome, a1, b1);
+    }
+    
+}
