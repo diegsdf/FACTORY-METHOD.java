@@ -1,0 +1,36 @@
+// PARTE 2 FACTORY METHOD//
+package pessoa;
+
+
+public abstract class Pessoa1 {
+    public String nome;
+   
+    public float a1,b1;
+}
+
+class Media extends Pessoa1 {	
+	public Media(String nome) {
+		this.nome = nome;
+		System.out.println(this.nome + ", você esta aprovado ");
+	}
+}
+class Media2 extends Pessoa1 {
+	
+	public Media2(String nome) {
+		this.nome = nome;
+		System.out.println(this.nome + ", você esta reprovado " );
+	}
+}
+class FactoryPessoa {
+
+	public Pessoa1 getPessoa(String nome,  Float a1, Float b1) {
+		
+            float media = (a1+b1)/2;
+                if (media >= 6)
+			return new Media(nome);
+		if (media <=5)
+			return new Media2(nome);
+           return null;
+        }
+
+}
